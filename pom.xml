@@ -10,11 +10,11 @@
 
 	<name>hetu-util</name>
 	<description>Java Utils for Henkilotunnus</description>
-	<url>https://www.free.fi</url>
+	<url>https://www.ishtech.fi/java/utils/hetu</url>
 
 	<organization>
-		<name>Free-Laskutus Oy</name>
-		<url>https://www.free.fi</url>
+		<name>IshTech</name>
+		<url>https://www.ishtech.fi</url>
 	</organization>
 
 	<licenses>
@@ -26,10 +26,8 @@
 	<developers>
 		<developer>
 			<name>Muneer Ahmed Syed</name>
-			<email>muneer@free.fi</email>
-			<url>https://gitlab.com/muneer2fustle</url>
-			<organization>Free-Laskutus Oy</organization>
-			<organizationUrl>https://www.free.fi</organizationUrl>
+			<email>muneer@ishtech.fi</email>
+			<url>https://github.com/muneer2ishtech</url>
 			<roles>
 				<role>architect</role>
 				<role>developer</role>
@@ -38,7 +36,7 @@
 	</developers>
 
 	<scm>
-		<url>https://gitlab.com/freefi/hetu-util-java</url>
+		<url>https://github.com/ishtech/hetu-util-java</url>
 	</scm>
 
 	<properties>
