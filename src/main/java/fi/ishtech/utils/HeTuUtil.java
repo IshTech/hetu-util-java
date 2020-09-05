@@ -30,7 +30,7 @@ public class HeTuUtil {
 	/**
 	 * Validates using regular expression [0-9]{6}[A\\-]{1}[0-9]{3}[A-Z0-9]{1}
 	 *
-	 * @param hetu
+	 * @param hetu - henkilotunnus
 	 * @return boolean - true if valid, false if invalid
 	 */
 	public static boolean isValidByRegex(String hetu) {
@@ -44,7 +44,7 @@ public class HeTuUtil {
 	/**
 	 * Validates using regular expression [0-9]{6}[A\\-]{1}[0-9]{3}[A-Z0-9]{1} and also checks if the date is valid
 	 *
-	 * @param hetu
+	 * @param hetu - henkilotunnus
 	 * @return boolean - true if valid, false if invalid
 	 */
 	public static boolean isValid(String hetu) {
@@ -63,7 +63,7 @@ public class HeTuUtil {
 	/**
 	 * Finds Date of birth of person based on Henkilo-tunnus (Finnish Social Security Id)
 	 *
-	 * @param hetu
+	 * @param hetu - henkilotunnus
 	 * @return {@link LocalDate} date-of-birth
 	 */
 	public static LocalDate toDateOfBirth(String hetu) {
