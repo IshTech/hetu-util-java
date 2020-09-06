@@ -188,4 +188,20 @@ public class HeTuUtilTest {
 		assertTrue(actual);
 	}
 
+	@Test
+	@Order(23)
+	public void testIsValidDateOfBirthInvalid() {
+		String hetu = "290215A855X";
+		boolean actual = HeTuUtil.isValidDateOfBirth(hetu);
+		assertFalse(actual);
+	}
+
+	@Test
+	@Order(23)
+	public void testIsValidDateOfBirthValid() {
+		String hetu = "010216-855Y";
+		boolean actual = HeTuUtil.isValidDateOfBirth(hetu);
+		assertTrue(actual);
+	}
+
 }

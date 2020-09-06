@@ -47,7 +47,7 @@ public class HeTuUtil {
 	 * @param hetu - henkilotunnus
 	 * @return boolean - true if valid, false if invalid
 	 */
-	public static boolean isValid(String hetu) {
+	public static boolean isValidDateOfBirth(String hetu) {
 		if (isValidByRegex(hetu)) {
 			try {
 				toDateOfBirth(hetu);
@@ -105,7 +105,7 @@ public class HeTuUtil {
 	 * @return boolean - true if valid, false if invalid
 	 */
 	public static boolean isValidChecksum(String hetu) {
-		if (isValidByRegex(hetu)) {
+		if (isValidDateOfBirth(hetu)) {
 			String ddmmyy = hetu.substring(0, 6);
 			String zzz = hetu.substring(7, 10);
 
