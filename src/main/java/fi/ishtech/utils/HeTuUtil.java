@@ -98,6 +98,12 @@ public class HeTuUtil {
 		return result;
 	}
 
+	/**
+	 * Validates checksum after validating using regular expression [0-9]{6}[A\\-]{1}[0-9]{3}[A-Z0-9]{1} and valid date 
+	 *
+	 * @param hetu - henkilotunnus
+	 * @return boolean - true if valid, false if invalid
+	 */
 	public static boolean isValidChecksum(String hetu) {
 		if (isValidByRegex(hetu)) {
 			String ddmmyy = hetu.substring(0, 6);
