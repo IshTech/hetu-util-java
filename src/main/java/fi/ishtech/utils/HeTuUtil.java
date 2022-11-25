@@ -1,9 +1,11 @@
 /**
- * 
+ *
  */
 package fi.ishtech.utils;
 
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Pattern;
 
 /**
@@ -15,7 +17,8 @@ public class HeTuUtil {
 
 	private static final String PLUS = "+";
 	private static final String HYPHEN = "-";
-	private static final String A = "A";
+	private static final List<String> CHARS_ALLOWED_AFTER_2000 = Arrays.asList("A", "B", "C", "D", "E", "F");
+	private static final List<String> CHARS_ALLOWED_IN_20TH_CENTURY = Arrays.asList(HYPHEN, "U", "V", "W", "X", "Y");
 
 	private static final String EIGHTEEN = "18";
 	private static final String NINETEEN = "19";
@@ -24,11 +27,11 @@ public class HeTuUtil {
 	private static final String CHECKSUM_STR = "0123456789ABCDEFHJKLMNPRSTUVWXY";
 	private static final int CHECKSUM_NUM = 31;
 
-	public static final String SIMPLE_REGEX = "[0-9]{6}[A\\-]{1}[0-9]{3}[A-Z0-9]{1}";
-	public static final String COMP_REGEX = "[0-9]{6}[A\\-+]{1}[0-9]{3}[A-Z0-9]{1}";
+	public static final String SIMPLE_REGEX = "[0-9]{6}[ABCDEFUVWXY\\-]{1}[0-9]{3}[A-Z0-9]{1}";
+	public static final String COMP_REGEX = "[0-9]{6}[ABCDEFUVWXY\\-+]{1}[0-9]{3}[A-Z0-9]{1}";
 
 	/**
-	 * Validates using regular expression [0-9]{6}[A\\-]{1}[0-9]{3}[A-Z0-9]{1}
+	 * Validates using regular expression [0-9]{6}[ABCDEFUVWXY\\-]{1}[0-9]{3}[A-Z0-9]{1}
 	 *
 	 * @param hetu - henkilotunnus
 	 * @return boolean - true if valid, false if invalid
@@ -83,14 +86,15 @@ public class HeTuUtil {
 
 		String yearChecker = hetu.substring(6, 7);
 
-		if (A.equalsIgnoreCase(yearChecker)) {
+		if (CHARS_ALLOWED_AFTER_2000.contains(yearChecker.toUpperCase())) {
 			y = TWENTY + y;
-		} else if (HYPHEN.equals(yearChecker)) {
+		} else if (CHARS_ALLOWED_IN_20TH_CENTURY.contains(yearChecker.toUpperCase())) {
 			y = NINETEEN + y;
 		} else if (PLUS.equals(yearChecker)) {
 			y = EIGHTEEN + y;
 		} else {
-			throw new RuntimeException("Invalid input, only '+' or '-' or 'A' allowed at 7 th character");
+			throw new RuntimeException(
+					"Invalid input, only '+' or '-' or one of 'ABCDEFUVWXY' allowed at 7 th character");
 		}
 
 		LocalDate result = LocalDate.of(Integer.parseInt(y), Integer.parseInt(m), Integer.parseInt(d));
@@ -99,7 +103,7 @@ public class HeTuUtil {
 	}
 
 	/**
-	 * Validates checksum after validating using regular expression [0-9]{6}[A\\-]{1}[0-9]{3}[A-Z0-9]{1} and valid date 
+	 * Validates checksum after validating using regular expression [0-9]{6}[ABCDEFUVWXY\\-]{1}[0-9]{3}[A-Z0-9]{1} and valid date
 	 *
 	 * @param hetu - henkilotunnus
 	 * @return boolean - true if valid, false if invalid
