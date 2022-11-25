@@ -25,7 +25,7 @@ public class HeTuUtilTest {
 	}
 
 	@Test
-	@Order(1)
+	@Order(2)
 	public void testIsValidByRegexBlank() {
 		String hetu = "";
 		boolean actual = HeTuUtil.isValidByRegex(hetu);
@@ -75,7 +75,7 @@ public class HeTuUtilTest {
 	@Test
 	@Order(8)
 	public void testIsValidByRegexCenturyCharDifferent() {
-		String hetu = "321316B855T";
+		String hetu = "321316Q855T";
 		boolean actual = HeTuUtil.isValidByRegex(hetu);
 		assertFalse(actual);
 	}
@@ -141,7 +141,7 @@ public class HeTuUtilTest {
 	@Test
 	@Order(16)
 	public void testToDateOfBirthInvalidCentury() {
-		String hetu = "271016B8550";
+		String hetu = "271016Q8550";
 		assertThrows(RuntimeException.class, () -> HeTuUtil.toDateOfBirth(hetu));
 	}
 
@@ -197,10 +197,274 @@ public class HeTuUtilTest {
 	}
 
 	@Test
-	@Order(23)
+	@Order(24)
 	public void testIsValidDateOfBirthValid() {
 		String hetu = "010216-855Y";
 		boolean actual = HeTuUtil.isValidDateOfBirth(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(25)
+	public void testIsValidByRegexAndTheSeventhCharIsB() {
+		String hetu = "130707B591W";
+		boolean actual = HeTuUtil.isValidByRegex(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(26)
+	public void testIsValidByRegexAndTheSeventhCharIsC() {
+		String hetu = "070503C194K";
+		boolean actual = HeTuUtil.isValidByRegex(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(27)
+	public void testIsValidByRegexAndTheSeventhCharIsD() {
+		String hetu = "080805D1989";
+		boolean actual = HeTuUtil.isValidByRegex(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(28)
+	public void testIsValidByRegexAndTheSeventhCharIsE() {
+		String hetu = "210808E086U";
+		boolean actual = HeTuUtil.isValidByRegex(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(29)
+	public void testIsValidByRegexAndTheSeventhCharIsF() {
+		String hetu = "040103F199K";
+		boolean actual = HeTuUtil.isValidByRegex(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(30)
+	public void testIsValidByRegexAndTheSeventhCharIsU() {
+		String hetu = "110797U8794";
+		boolean actual = HeTuUtil.isValidByRegex(hetu);
+		assertTrue(actual);
+	}
+	@Test
+	@Order(31)
+	public void testIsValidByRegexAndTheSeventhCharIsV() {
+		String hetu = "041197V8286";
+		boolean actual = HeTuUtil.isValidByRegex(hetu);
+		assertTrue(actual);
+	}
+	@Test
+	@Order(32)
+	public void testIsValidByRegexAndTheSeventhCharIsW() {
+		String hetu = "250795W051X";
+		boolean actual = HeTuUtil.isValidByRegex(hetu);
+		assertTrue(actual);
+	}
+	@Test
+	@Order(33)
+	public void testIsValidByRegexAndTheSeventhCharIsX() {
+		String hetu = "030898X331B";
+		boolean actual = HeTuUtil.isValidByRegex(hetu);
+		assertTrue(actual);
+	}
+	@Test
+	@Order(34)
+	public void testIsValidByRegexAndTheSeventhCharIsY() {
+		String hetu = "140996Y756E";
+		boolean actual = HeTuUtil.isValidByRegex(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(35)
+	public void testToDateOfBirthTwentyAndTheSeventhCharIsB() {
+		String hetu = "130707B591W";
+		LocalDate expected = LocalDate.parse("2007-07-13");
+		LocalDate actual = HeTuUtil.toDateOfBirth(hetu);
+
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(36)
+	public void testToDateOfBirthTwentyAndTheSeventhCharIsC() {
+		String hetu = "070503C194K";
+		LocalDate expected = LocalDate.parse("2003-05-07");
+		LocalDate actual = HeTuUtil.toDateOfBirth(hetu);
+
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(37)
+	public void testToDateOfBirthTwentyAndTheSeventhCharIsD() {
+		String hetu = "080805D1989";
+		LocalDate expected = LocalDate.parse("2005-08-08");
+		LocalDate actual = HeTuUtil.toDateOfBirth(hetu);
+
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(38)
+	public void testToDateOfBirthTwentyAndTheSeventhCharIsE() {
+		String hetu = "210808E086U";
+		LocalDate expected = LocalDate.parse("2008-08-21");
+		LocalDate actual = HeTuUtil.toDateOfBirth(hetu);
+
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(39)
+	public void testToDateOfBirthTwentyAndTheSeventhCharIsF() {
+		String hetu = "040103F199K";
+		LocalDate expected = LocalDate.parse("2003-01-04");
+		LocalDate actual = HeTuUtil.toDateOfBirth(hetu);
+
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(40)
+	public void testToDateOfBirthNineteenAndTheSeventhCharIsU() {
+		String hetu = "110797U8794";
+		LocalDate expected = LocalDate.parse("1997-07-11");
+		LocalDate actual = HeTuUtil.toDateOfBirth(hetu);
+
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(41)
+	public void testToDateOfBirthNineteenAndTheSeventhCharIsV() {
+		String hetu = "041197V8286";
+		LocalDate expected = LocalDate.parse("1997-11-04");
+		LocalDate actual = HeTuUtil.toDateOfBirth(hetu);
+
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(42)
+	public void testToDateOfBirthNineteenAndTheSeventhCharIsW() {
+		String hetu = "250795W051X";
+		LocalDate expected = LocalDate.parse("1995-07-25");
+		LocalDate actual = HeTuUtil.toDateOfBirth(hetu);
+
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(43)
+	public void testToDateOfBirthNineteenAndTheSeventhCharIsX() {
+		String hetu = "030898X331B";
+		LocalDate expected = LocalDate.parse("1998-08-03");
+		LocalDate actual = HeTuUtil.toDateOfBirth(hetu);
+
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(44)
+	public void testToDateOfBirthNineteenAndTheSeventhCharIsY() {
+		String hetu = "140996Y756E";
+		LocalDate expected = LocalDate.parse("1996-09-14");
+		LocalDate actual = HeTuUtil.toDateOfBirth(hetu);
+
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	@Order(45)
+	public void testIsValidChecksumAndTheSeventhCharIsA() {
+		String hetu = "010216-855Y";
+		boolean actual = HeTuUtil.isValidChecksum(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(46)
+	public void testIsValidChecksumAndTheSeventhCharIsB() {
+		String hetu = "130707B591W";
+		boolean actual = HeTuUtil.isValidChecksum(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(47)
+	public void testIsValidChecksumAndTheSeventhCharIsC() {
+		String hetu = "070503C194K";
+		boolean actual = HeTuUtil.isValidChecksum(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(48)
+	public void testIsValidChecksumAndTheSeventhCharIsD() {
+		String hetu = "080805D1989";
+		boolean actual = HeTuUtil.isValidChecksum(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(49)
+	public void testIsValidChecksumAndTheSeventhCharIsE() {
+		String hetu = "210808E086U";
+		boolean actual = HeTuUtil.isValidChecksum(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(50)
+	public void testIsValidChecksumAndTheSeventhCharIsF() {
+		String hetu = "040103F199K";
+		boolean actual = HeTuUtil.isValidChecksum(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(51)
+	public void testIsValidChecksumAndTheSeventhCharIsU() {
+		String hetu = "110797U8794";
+		boolean actual = HeTuUtil.isValidChecksum(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(52)
+	public void testIsValidChecksumAndTheSeventhCharIsV() {
+		String hetu = "041197V8286";
+		boolean actual = HeTuUtil.isValidChecksum(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(53)
+	public void testIsValidChecksumAndTheSeventhCharIsW() {
+		String hetu = "250795W051X";
+		boolean actual = HeTuUtil.isValidChecksum(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(54)
+	public void testIsValidChecksumAndTheSeventhCharIsX() {
+		String hetu = "030898X331B";
+		boolean actual = HeTuUtil.isValidChecksum(hetu);
+		assertTrue(actual);
+	}
+
+	@Test
+	@Order(55)
+	public void testIsValidChecksumAndTheSeventhCharIsY() {
+		String hetu = "140996Y756E";
+		boolean actual = HeTuUtil.isValidChecksum(hetu);
 		assertTrue(actual);
 	}
 
