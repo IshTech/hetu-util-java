@@ -1,6 +1,3 @@
-/**
- *
- */
 package fi.ishtech.utils;
 
 import java.time.LocalDate;
@@ -27,7 +24,14 @@ public class HeTuUtil {
 	private static final String CHECKSUM_STR = "0123456789ABCDEFHJKLMNPRSTUVWXY";
 	private static final int CHECKSUM_NUM = 31;
 
+	/**
+	 * Regex for old format of henkilotunnus
+	 */
 	public static final String SIMPLE_REGEX = "[0-9]{6}[ABCDEFUVWXY\\-]{1}[0-9]{3}[A-Z0-9]{1}";
+
+	/**
+	 * Regex for new format of henkilotunnus
+	 */
 	public static final String COMP_REGEX = "[0-9]{6}[ABCDEFUVWXY\\-+]{1}[0-9]{3}[A-Z0-9]{1}";
 
 	/**
@@ -103,7 +107,8 @@ public class HeTuUtil {
 	}
 
 	/**
-	 * Validates checksum after validating using regular expression [0-9]{6}[ABCDEFUVWXY\\-]{1}[0-9]{3}[A-Z0-9]{1} and valid date
+	 * Validates checksum after validating using regular expression [0-9]{6}[ABCDEFUVWXY\\-]{1}[0-9]{3}[A-Z0-9]{1} and
+	 * valid date
 	 *
 	 * @param hetu - henkilotunnus
 	 * @return boolean - true if valid, false if invalid
