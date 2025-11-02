@@ -27,7 +27,6 @@
 	<developers>
 		<developer>
 			<name>Muneer Ahmed Syed</name>
-			<email>muneer@ishtech.fi</email>
 			<url>https://github.com/muneer2ishtech</url>
 			<roles>
 				<role>architect</role>
@@ -61,7 +60,6 @@
 
 		<junit-jupiter.version>6.0.0</junit-jupiter.version>
 
-		<maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
 		<maven-gpg-plugin.version>3.2.8</maven-gpg-plugin.version>
 
 		<central-publishing-maven-plugin.version>0.9.0</central-publishing-maven-plugin.version>
@@ -80,8 +78,19 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${maven-javadoc-plugin.version}</version>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
