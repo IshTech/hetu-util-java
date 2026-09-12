@@ -1,4 +1,4 @@
-package fi.ishtech.hetu.utils;
+package fi.ishtech.hetu.util;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
 
-import fi.ishtech.hetu.utils.HeTuUtil;
+import fi.ishtech.hetu.util.HeTuUtil;
 
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;

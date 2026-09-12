@@ -1,4 +1,4 @@
-package fi.ishtech.hetu.utils;
+package fi.ishtech.hetu.util;
 
 import java.time.LocalDate;
 import java.util.Arrays;
