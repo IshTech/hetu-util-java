@@ -9,9 +9,6 @@ import java.time.DateTimeException;
 import java.time.LocalDate;
 
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
-
-import fi.ishtech.hetu.util.HeTuUtil;
-
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -254,6 +251,7 @@ public class HeTuUtilTest {
 		boolean actual = HeTuUtil.isValidByRegex(hetu);
 		assertTrue(actual);
 	}
+
 	@Test
 	@Order(31)
 	public void testIsValidByRegexAndTheSeventhCharIsV() {
@@ -261,6 +259,7 @@ public class HeTuUtilTest {
 		boolean actual = HeTuUtil.isValidByRegex(hetu);
 		assertTrue(actual);
 	}
+
 	@Test
 	@Order(32)
 	public void testIsValidByRegexAndTheSeventhCharIsW() {
@@ -268,6 +267,7 @@ public class HeTuUtilTest {
 		boolean actual = HeTuUtil.isValidByRegex(hetu);
 		assertTrue(actual);
 	}
+
 	@Test
 	@Order(33)
 	public void testIsValidByRegexAndTheSeventhCharIsX() {
@@ -275,6 +275,7 @@ public class HeTuUtilTest {
 		boolean actual = HeTuUtil.isValidByRegex(hetu);
 		assertTrue(actual);
 	}
+
 	@Test
 	@Order(34)
 	public void testIsValidByRegexAndTheSeventhCharIsY() {
