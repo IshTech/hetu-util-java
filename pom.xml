@@ -10,7 +10,7 @@
 	<packaging>pom</packaging>
 
 	<name>hetu-util</name>
-	<description>Relocated to fi.ishtech.hetu:hetu-util:5.0.0. Java package changed to fi.ishtech.hetu.util</description>
+	<description>Relocated to fi.ishtech.hetu:hetu-util:5.0.0. Java package changed from fi.ishtech.utils to fi.ishtech.hetu.util</description>
 	<url>https://www.ishtech.fi/libs/hetu-util-java</url>
 
 	<organization>
@@ -45,7 +45,7 @@
 			<groupId>fi.ishtech.hetu</groupId>
 			<artifactId>hetu-util</artifactId>
 			<version>5.0.0</version>
-			<message>Relocated to fi.ishtech.hetu:hetu-util:5.0.0. Java package changed to fi.ishtech.hetu.util</message>
+			<message>Relocated to fi.ishtech.hetu:hetu-util:5.0.0. Java package changed from fi.ishtech.utils to fi.ishtech.hetu.util</message>
 		</relocation>
 	</distributionManagement>
 
