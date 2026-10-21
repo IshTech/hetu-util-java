@@ -1,4 +1,4 @@
-package fi.ishtech.utils;
+package fi.ishtech.hetu.util;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -251,6 +251,7 @@ public class HeTuUtilTest {
 		boolean actual = HeTuUtil.isValidByRegex(hetu);
 		assertTrue(actual);
 	}
+
 	@Test
 	@Order(31)
 	public void testIsValidByRegexAndTheSeventhCharIsV() {
@@ -258,6 +259,7 @@ public class HeTuUtilTest {
 		boolean actual = HeTuUtil.isValidByRegex(hetu);
 		assertTrue(actual);
 	}
+
 	@Test
 	@Order(32)
 	public void testIsValidByRegexAndTheSeventhCharIsW() {
@@ -265,6 +267,7 @@ public class HeTuUtilTest {
 		boolean actual = HeTuUtil.isValidByRegex(hetu);
 		assertTrue(actual);
 	}
+
 	@Test
 	@Order(33)
 	public void testIsValidByRegexAndTheSeventhCharIsX() {
@@ -272,6 +275,7 @@ public class HeTuUtilTest {
 		boolean actual = HeTuUtil.isValidByRegex(hetu);
 		assertTrue(actual);
 	}
+
 	@Test
 	@Order(34)
 	public void testIsValidByRegexAndTheSeventhCharIsY() {
